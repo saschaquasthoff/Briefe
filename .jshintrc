@@ -1,0 +1,14 @@
+{
+  "browser": false,
+  "curly": true,
+  "devel": true,
+  "eqeqeq": true,
+  "indent": 2,
+  "jquery": false,
+  "node": true,
+  "nonbsp": true,
+  "strict": true,
+  "undef": true,
+  "unused": true,
+  "globals": {}
+}
