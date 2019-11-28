@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "airbnb-base"
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      160,
+      4,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "describe": "readonly",
+    "test": "readonly",
+    "expect": "readonly"
+  }
+}

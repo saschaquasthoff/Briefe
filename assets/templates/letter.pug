@@ -1,0 +1,104 @@
+doctype html
+html
+  title= subject
+  meta(charset='utf-8')
+  link(href='../assets/styles/letter.css', rel='stylesheet')
+body
+
+  hr.marker.marker--half_page
+  hr.marker.marker--first_bend
+  hr.marker.marker--second_bend
+
+
+  //- Sender
+  p.adresse.sender
+    span
+      | #{sender.forename} #{sender.surname}
+    | &bull;
+    span
+      | #{sender.street} #{sender.housenumber}
+    | &bull;
+    span
+      | #{sender.zip} #{sender.city}
+
+
+  //- Recipient
+  p.adresse.recipient
+    if recipient.company
+      != recipient.company
+      br
+      != "z. Hd. "
+
+    | #{recipient.forename} #{recipient.surname}
+    br
+
+    if recipient.street && recipient.housenumber
+      | #{recipient.street} #{recipient.housenumber}
+      br
+    | #{recipient.zip} #{recipient.city}
+
+
+  //- Date
+  .date
+    | #{sender.city}, #{date}
+
+
+  //- Content
+  .content
+    h1.subject!= subject
+
+    p.salutation
+      | #{salutation},
+
+    != content
+
+    p.greetings= greetings
+      span.name
+        | #{sender.forename} #{sender.surname}
+
+
+  //- Footer
+  footer
+    ul.footnotes
+      li.footnote
+        h2 Anschrift
+        p
+          | #{sender.forename} #{sender.surname}
+          br
+          | #{sender.street} #{sender.housenumber}
+          br
+          | #{sender.zip} #{sender.city}
+
+      li.footnote
+        h2 Kontakt
+        p
+          if sender.phone
+            | #{sender.phone}
+            br
+          | #{sender.mobile}
+          br
+          | #{sender.email}
+          br
+          | #{sender.homepage}
+
+
+      //- select between private and corporate bank account
+      if private
+        - var account = sender.account.private
+      else
+        - var account = sender.account.company
+
+      li.footnote
+        h2 Bankverbindung
+        p
+          | #{account.bank}
+          if account.bank_code
+            br
+            | BLZ #{account.bank_code}
+          if account.account_number
+            br
+            | account-Nr. #{account.account_number}
+          br
+          | IBAN #{account.iban}
+          br
+          | BIC #{account.bic}
