@@ -25,7 +25,7 @@ compileCSS((cssErr) => {
         throw new Error(renderErr);
       }
 
-      exec(`open Briefe/${letterFile}.html`);
+      exec(`open output/${letterFile}.html`);
     });
   });
 });
