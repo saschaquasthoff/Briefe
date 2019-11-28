@@ -1,7 +1,7 @@
-const { exec } = require('child_process');
-const compileCSS = require('./lib/css');
-const renderHTML = require('./lib/html');
-const { parseLetter } = require('./lib/parseLetter');
+import { exec } from 'child_process';
+import compileCSS from './lib/css';
+import renderHTML from './lib/html';
+import parseLetter from './lib/parseLetter';
 
 /** @type {string} The name of the letter to be printed is provided by a command line parameter. */
 const letterFile = process.argv[2];

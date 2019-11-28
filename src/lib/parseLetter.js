@@ -1,31 +1,30 @@
-const parseYaml = require('js-yaml').safeLoad;
-const parseMarkdown = require('marked');
-const { readFiles } = require('./io');
-const {
+import { safeLoad as parseYaml } from 'js-yaml';
+import parseMarkdown from 'marked';
+import { readFiles } from './io';
+
+import {
   markdownPath,
   senderFile,
   fileExtension,
   requiredProperties,
-} = require('../config');
+} from '../config';
 
 /**
  * @param {MetaData} metadata
  * @returns {boolean}
  */
-const isARequiredPropertyMissing = (metadata) => requiredProperties.some((prop) => !metadata[prop]);
-exports.isARequiredPropertyMissing = isARequiredPropertyMissing;
+export const isARequiredPropertyMissing = (metadata) => requiredProperties.some((prop) => !metadata[prop]);
 
 /**
  * Splits ´letter´ into the yaml frontmatter and the letter content.
  * @param {string} letter
  * @returns {string[]}
  */
-const split = (letter) => {
+export const split = (letter) => {
   const [, metadata, content] = /^-{3}([\s\S]+)-{3}([\s\S]+)/m.exec(letter);
 
   return [metadata, content];
 };
-exports.split = split;
 
 /**
  * Parses the content of a (markdown) letter file. Expects the letter file to have
@@ -57,4 +56,5 @@ const parseLetter = (filename, callback) => {
     callback(null, locales);
   });
 };
-exports.parseLetter = parseLetter;
+
+export default parseLetter;

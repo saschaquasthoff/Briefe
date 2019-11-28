@@ -1,17 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-
-const {
-  metadata,
-  content,
-  expectedLocales,
-} = require('../../mocks/parseLetter');
-
-const {
-  isARequiredPropertyMissing,
-  split,
-  parseLetter,
-} = require('./parseLetter');
+import fs from 'fs';
+import path from 'path';
+import { metadata, content, expectedLocales } from '../../mocks/parseLetter';
+import parseLetter, { isARequiredPropertyMissing, split } from './parseLetter';
 
 describe('isARequiredPropertyMissing()', () => {
   test('metadata contains all required properties', () => {

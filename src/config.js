@@ -1,40 +1,29 @@
-const path = require('path');
+import path from 'path';
 
 /** @type {string} */
-const markdownPath = `${path.resolve(__dirname, '../data/letter/')}/`;
+export const markdownPath = `${path.resolve(__dirname, '../data/letter/')}/`;
 
 /** @type {string} */
-const senderFile = path.resolve(__dirname, '../data/sender.yaml');
+export const senderFile = path.resolve(__dirname, '../data/sender.yaml');
 
 /** @type {string} */
-const fileExtension = '.markdown';
+export const fileExtension = '.markdown';
 
 /** @type {string[]} */
-const requiredProperties = [
+export const requiredProperties = [
   'content',
   'date',
   'subject',
 ];
 
 /** @type {string} The pug template file. */
-const templateFile = path.resolve(__dirname, '../assets/templates/letter.pug');
+export const templateFile = path.resolve(__dirname, '../assets/templates/letter.pug');
 
 /** @type {string} The HTML file. */
-const htmlFile = path.resolve(__dirname, '../output/%.html');
+export const htmlFile = path.resolve(__dirname, '../output/%.html');
 
 /** @type {string} */
-const stylusFile = path.resolve(__dirname, '../assets/styles/letter.styl');
+export const stylusFile = path.resolve(__dirname, '../assets/styles/letter.styl');
 
 /** @type {string} */
-const cssFile = path.resolve(__dirname, '../assets/styles/letter.css');
-
-module.exports = {
-  markdownPath,
-  senderFile,
-  fileExtension,
-  requiredProperties,
-  templateFile,
-  htmlFile,
-  stylusFile,
-  cssFile,
-};
+export const cssFile = path.resolve(__dirname, '../assets/styles/letter.css');

@@ -4,7 +4,8 @@
   "description": "A parser for yaml/markdown files, outputs PDF.",
   "main": "src/index.js",
   "scripts": {
-    "parse": "node src/index.js",
+    "parse": "node build/index.js",
+    "build": "babel src -d build",
     "test": "jest --verbose",
     "coverage": "jest --coverage"
   },
@@ -17,6 +18,9 @@
     "jest": "^24.9.0"
   },
   "dependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
     "js-yaml": "~3.0.2",
     "marked": "~0.3.2",
     "nib": "~1.0.2",

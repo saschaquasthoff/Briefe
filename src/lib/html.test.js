@@ -1,6 +1,6 @@
-const { readFile } = require('./io');
-const { locales, expectedMarkup } = require('../../mocks/html');
-const renderHTML = require('./html');
+import { readFile } from './io';
+import { locales, expectedMarkup } from '../../mocks/html';
+import renderHTML from './html';
 
 describe('renderHTML()', () => {
   test('should render a given template and write it to file', (done) => {

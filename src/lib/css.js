@@ -1,14 +1,14 @@
-const path = require('path');
-const stylusParser = require('stylus');
-const { readFile, writeFile } = require('./io');
-const { stylusFile, cssFile } = require('../config');
+import path from 'path';
+import stylusParser from 'stylus';
+import { readFile, writeFile } from './io';
+import { stylusFile, cssFile } from '../config';
 
 /**
 * Compiles stylus to CSS.
 * @param {() => {}} callback
 * @returns {void}
 */
-module.exports = (callback) => {
+const compileCSS = (callback) => {
   readFile(stylusFile, (err, stylusCode) => {
     if (err) {
       callback(err);
@@ -34,3 +34,5 @@ module.exports = (callback) => {
       .render(renderFunc);
   });
 };
+
+export default compileCSS;
