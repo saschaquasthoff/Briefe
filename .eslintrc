@@ -22,6 +22,7 @@
   "globals": {
     "describe": "readonly",
     "test": "readonly",
-    "expect": "readonly"
+    "expect": "readonly",
+    "afterEach": "readonly"
   }
 }
