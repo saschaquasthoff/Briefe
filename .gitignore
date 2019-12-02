@@ -4,3 +4,4 @@ data/letter/*
 !data/letter/test.markdown
 output/*
 build/*
+coverage/*
