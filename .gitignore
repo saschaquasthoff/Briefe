@@ -1,5 +1,5 @@
 *.DS_Store
 node_modules
-data/
-output/
-build/
+data/letter/*
+output/*
+build/*
