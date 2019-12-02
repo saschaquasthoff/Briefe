@@ -73,7 +73,7 @@ exports.mockedMarkup = `<!DOCTYPE html>
       </li>
       <li class="footnote">
         <h2>Bankverbindung</h2>
-        <p>Bank<br>IBAN DE01234567890123456789<br>BIC BankDDEFFXXX
+        <p>Bank<br>IBAN DE01234567890123456789<br>BIC ABCDEFGHXXX
         </p>
       </li>
     </ul>
