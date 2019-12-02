@@ -5,7 +5,7 @@ import { readFiles } from './io';
 import {
   markdownPath,
   senderFile,
-  fileExtension,
+  markdownExtension,
   requiredProperties,
 } from '../config';
 
@@ -36,7 +36,7 @@ export const split = (letter) => {
  */
 const parseLetter = (filename, callback) => {
   const readFilesPromises = readFiles([
-    `${markdownPath}${filename}${fileExtension}`,
+    `${markdownPath}${filename}${markdownExtension}`,
     senderFile,
   ]);
 

@@ -10,19 +10,19 @@ if (!letterFile) {
   throw new Error('No letterFile to parse!');
 }
 
-compileCSS((cssErr) => {
-  if (cssErr) {
-    throw new Error(cssErr);
+compileCSS((cssError) => {
+  if (cssError) {
+    throw new Error(cssError);
   }
 
-  parseLetter(letterFile, (err, locales) => {
-    if (err) {
-      throw new Error(err);
+  parseLetter(letterFile, (parseError, locales) => {
+    if (parseError) {
+      throw new Error(parseError);
     }
 
-    renderHTML(letterFile, locales, (renderErr) => {
-      if (renderErr) {
-        throw new Error(renderErr);
+    renderHTML(letterFile, locales, (renderError) => {
+      if (renderError) {
+        throw new Error(renderError);
       }
 
       exec(`open output/${letterFile}.html`);

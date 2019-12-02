@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { metadata, content, expectedLocales } from '../../mocks/parseLetter';
+import { mockedMetadata, mockedContent, mockedLocales } from '../../mocks/parseLetter';
 import parseLetter, { isARequiredPropertyMissing, split } from './parseLetter';
 
 describe('isARequiredPropertyMissing()', () => {
@@ -24,7 +24,7 @@ describe('split()', () => {
       'utf8',
     );
 
-    expect(split(letter)).toMatchObject([metadata, content]);
+    expect(split(letter)).toMatchObject([mockedMetadata, mockedContent]);
   });
 });
 
@@ -32,7 +32,7 @@ describe('parseLetter()', () => {
   test('should read the letter data from a given filename and parse it', (done) => {
     parseLetter('test', (err, locales) => {
       expect(err).toBe(null);
-      expect(locales).toStrictEqual(expectedLocales);
+      expect(locales).toStrictEqual(mockedLocales);
       done();
     });
   });

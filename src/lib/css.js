@@ -9,19 +9,19 @@ import { stylusFile, cssFile } from '../config';
 * @returns {void}
 */
 const compileCSS = (callback) => {
-  readFile(stylusFile, (err, stylusCode) => {
-    if (err) {
-      callback(err);
+  readFile(stylusFile, (fileError, stylusCode) => {
+    if (fileError) {
+      callback(fileError);
     }
 
     const paths = [
-      `./${path.resolve(__dirname, '/../assets/styles/partials/')}`,
       `./${path.resolve(__dirname, '/../node_modules/')}`,
+      `./${path.resolve(__dirname, '/../assets/styles/partials/')}`,
     ];
 
-    const renderFunc = (renderErr, css) => {
-      if (renderErr) {
-        callback(renderErr);
+    const renderFunc = (renderError, css) => {
+      if (renderError) {
+        callback(renderError);
       }
 
       writeFile(cssFile, css, callback);
