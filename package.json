@@ -6,7 +6,7 @@
   "scripts": {
     "parse": "node build/index.js",
     "build": "babel src -d build",
-    "test": "jest --verbose",
+    "test": "jest --verbose ./src",
     "coverage": "jest --coverage"
   },
   "author": "Sascha Quasthoff",
