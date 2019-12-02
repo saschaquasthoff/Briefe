@@ -21,7 +21,7 @@
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
-    "js-yaml": "~3.0.2",
+    "js-yaml": "~3.13.1",
     "marked": "~0.3.2",
     "nib": "~1.0.2",
     "pug": "^2.0.0-beta6",
